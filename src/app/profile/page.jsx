@@ -56,7 +56,7 @@ export default function UserProfile() {
     async function fetchBookings() {
       try {
         const response = await fetch(
-          `http://localhost:5050/booking/${user.userId}`,
+          `${process.env.NEXT_PUBLIC_API_URL}/booking/${user.userId}`,
           {
             credentials: "include", // Crucial: Sends auth cookie to Express
           },

@@ -29,7 +29,7 @@ const MyBookingPage = async () => {
   try {
     const requestHeaders = await headers();
 
-    const res = await fetch(`http://localhost:5050/booking/${user.id}`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/booking/${user.id}`, {
       cache: "no-store",
       headers: {
         cookie: requestHeaders.get("cookie") || "",

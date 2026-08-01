@@ -11,7 +11,10 @@ import { FaCalendarAlt, FaDollarSign } from "react-icons/fa";
 const DestinationDetailsPage = async ({ params }) => {
   const { id } = await params;
   //   console.log(id);
-  const res = await fetch(`http://localhost:5050/destination/${id}`);
+
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/destination/${id}`, {
+    cache: "no-store",
+  });
   const destination = await res.json();
   //   console.log(destination);
   const {

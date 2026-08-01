@@ -51,7 +51,7 @@ const AddDestinationPage = async () => {
     // Grab the incoming request headers to forward cookies to Express
     const requestHeaders = await headers();
 
-    const res = await fetch("http://localhost:5050/destination", {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/destination`, {
       method: "POST",
       headers: {
         "content-type": "application/json",
