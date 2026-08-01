@@ -43,7 +43,7 @@ export function EditModal({ destination }) {
     console.log("Destination Data:", updatedDestinationData);
 
     try {
-      const res = await fetch(`http://localhost:5050/destination/${_id}`, {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/destination/${_id}`, {
         method: "PATCH",
         headers: {
           "content-type": "application/json",

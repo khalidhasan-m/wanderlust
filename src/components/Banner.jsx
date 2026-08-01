@@ -2,7 +2,7 @@ import { Separator } from "@heroui/react";
 
 const Banner = () => {
   return (
-    <div className="bg-[url('/assets/banner.png')] text-white  flex justify-between flex-col items-center  gap-5 h-150">
+    <div className="bg-[url('/assets/banner.png')] text-white flex justify-between flex-col items-center gap-5 h-[150px]">
       <div className="p-10 text-center flex justify-center flex-col items-center gap-3.5 flex-1">
         <h1 className="text-7xl">
           Discover Your <br /> Next Adventure
@@ -30,28 +30,26 @@ const Banner = () => {
           <p className="text-xs">Address, City or Zip</p>
         </div>
 
-         <Separator variant="tertiary" orientation="vertical" />
+        <Separator variant="tertiary" orientation="vertical" />
 
         <div>
           <h3 className="text-sm">Date/Duration</h3>
           <p className="text-xs">Anytime/3 Days</p>
         </div>
 
-           <Separator variant="tertiary" orientation="vertical" />
+        <Separator variant="tertiary" orientation="vertical" />
 
         <div>
           <h3 className="text-sm">Budget</h3>
           <p className="text-xs">$0-$3000</p>
         </div>
 
-           <Separator variant="tertiary" orientation="vertical" />
+        <Separator variant="tertiary" orientation="vertical" />
 
         <div>
           <h3 className="text-sm">People</h3>
           <p className="text-xs">5-10</p>
         </div>
-
-
 
         <div className="bg-cyan-500 py-2 px-4">
           <h3>Search</h3>

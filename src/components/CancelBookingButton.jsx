@@ -17,7 +17,7 @@ const CancelBookingButton = ({ bookingId }) => {
     try {
       setLoading(true);
 
-      const res = await fetch(`http://localhost:5050/booking/${bookingId}`, {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/booking/${bookingId}`, {
         method: "DELETE",
         credentials: "include", // <-- Crucial: Sends the auth cookie to Express backend
       });

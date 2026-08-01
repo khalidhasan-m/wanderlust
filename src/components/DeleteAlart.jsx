@@ -7,7 +7,7 @@ import { redirect } from "next/navigation";
 export function DeleteAlert({ destination }) {
   const { _id, destinationName } = destination;
   const handleDelete = async () => {
-    const res = await fetch(`http://localhost:5050/destination/${_id}`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/destination/${_id}`, {
       method: "DELETE",
       credentials: "include", // <-- Crucial: Sends your login cookie to the backend
     });
