@@ -20,25 +20,15 @@ const BookingCard = ({ destination }) => {
   const handleBooking = async () => {
     if (!user) {
       toast.error("Please login first.");
-
       return;
     }
 
     if (!departureDate) {
       toast.error("Please select a departure date.");
-
       return;
     }
 
     const bookingData = {
-      userId: user.id,
-
-      userImage: user.image,
-
-      userName: user.name,
-
-      userEmail: user.email,
-
       destinationId: _id,
 
       destinationName,
@@ -53,20 +43,6 @@ const BookingCard = ({ destination }) => {
     };
 
     try {
-      // Get Better Auth session token
-
-      const sessionData = await authClient.getSession();
-
-      console.log("Auth Session:", sessionData);
-
-      const token = sessionData?.data?.session?.token;
-
-      if (!token) {
-        toast.error("Session expired. Please login again.");
-
-        return;
-      }
-
       const res = await fetch(
         `${process.env.NEXT_PUBLIC_API_URL}/booking`,
 
@@ -75,9 +51,10 @@ const BookingCard = ({ destination }) => {
 
           headers: {
             "Content-Type": "application/json",
-
-            Authorization: `Bearer ${token}`,
           },
+
+          // send Better Auth cookie
+          credentials: "include",
 
           body: JSON.stringify(bookingData),
         },
